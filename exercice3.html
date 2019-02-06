@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <head>
+    <meta charset="utf-8">
+    <script src="asset/jquery.js"></script>
+    <title>exercice 2</title>
+  </head>
+  <body>
+    <h4>rentrez vos informations: </h4>
+    <form>
+      <input value="" id="firstName" />
+      <input value="" id="lastName" />
+      <input value="" id="mail" />
+      <input value="" id="phone" />
+    </form>
+    <input type="button" value="validez " id="go" />
+    <script>
+        $(document).ready(function(){
+          $("#go").click(function(){
+            if (letterFirstName.test([a-zA-Z])(('#firstname').val())) || (letterLastName.test([a-zA-Z])(('#lastName').val())) ||
+            (adress.test([0-9])(('#adress').val())) || (adress.test([0-9])(('#mail').val())) {
+                   $('#form').css('border', '5px solid red');
+              }
+              else {
+                alert('vos informations ont bien été prise en compte')
+              }
+          });
+        });
+    </script>
+  </body>
+  </html>

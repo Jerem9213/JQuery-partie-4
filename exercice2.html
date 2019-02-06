@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <head>
+    <meta charset="utf-8">
+    <script src="asset/jquery.js"></script>
+    <title>exercice 2</title>
+  </head>
+  <body>
+    <h4>Rentrer des notes: </h4>
+    <form>
+      <input value="" id="note1" />
+      <input value="" id="note2" />
+      <input value="" id="note3" />
+      <input value="" id="note4" />
+      <input value="" id="note5" />
+    </form>
+    <input type="button" value="Moyenne" id="moyenne" />
+    <script>
+    $(document).ready(function(){
+      $("#moyenne").click(function(){
+        usersNote = parseFloat($("#note1").val()) + parseFloat($("#note2").val()) + parseFloat($("#note3").val())+ parseFloat($("#note4").val()) + parseFloat($("#note5").val());
+        averageUsers= usersNote / 5;
+        if(averageUsers >= 0 && averageUsers < 10 ){
+          appreciation=(" en dessous de la moyenne");
+        }else if(averageUsers >=10 && averageUsers < 13) {
+          appreciation=(" moyen");
+        }else if(averageUsers >= 13 && averageUsers < 16) {
+          appreciation=(" bien");
+        }else if(averageUsers >= 16 && averageUsers < 20) {
+          appreciation=(" très bien");
+        }else if(averageUsers == 20){
+          appreciation=(" excellent");
+        }else {
+          appreciation=(" Entrez des nombres entre 0 et 20");
+        }
+        alert("votre moyenne et de : " + averageUsers +  "," + appreciation );
+      });
+    });
+    </script>
+  </body>
+  </html>

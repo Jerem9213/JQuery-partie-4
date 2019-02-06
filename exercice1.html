@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css" />
+  <script src="asset/jquery.js"></script>
+  <title>exercice 6</title>
+</head>
+<body>
+  <div>
+    <input type="radio" id="stone"
+    name="playerChoice" value="1" checked />
+    <label for="">Pierre</label>
+    <div>
+      <input type="radio" id="leaf"
+      name="playerChoice" value="2"  />
+      <label for="leaf">Feuille</label>
+    </div>
+    <div>
+      <input type="radio" id="scissors"
+      name="playerChoice" value="3"  />
+      <label for="scissors">Ciseaux</label>
+    </div>
+  <input type="button" value="Shifumi" />
+  <label>Victoire :</label>
+  <input id="showvictory" value ="0"></input>
+  <label>Défaite :</label>
+  <input id="showloose" value ="0"></input>
+  <label>pourcentage de victoire :</label>
+  <input id="showwin" value ="0"></input>
+  <script type="text/javascript">
+  $(function(){
+      cptTotal = 0;
+      nbVictory = 0;
+      prct = 0;
+      nbDefeat = 0;
+  $("#Shifumi").click(function(){
+    pcChoice = Math.floor(Math.random()*3+1);
+    playerChoice = $("#playerChoice").val();
+    cptTotal++;
+  if(pcChoice == playerChoice){
+    alert("equality!");
+  }else if((pcChoice == 1 && playerChoice == 3) || (pcChoice == 3 && playerChoice == 2) || (pcChoice == 2 && playerChoice == 1)){
+    nbDefeat++;
+  alert("you loose, try again");
+  }else {
+    nbVictory++;
+    alert("you win!");
+  }
+  prct = (nbVictory*100)/cptTotal;
+  $("#score").html(nbVictory + " Victory " + nbDefeat + " Defeat " + prct +"%");
+  });
+  });
+
+});
+  });
+  </script>
+</body>
+</html>
